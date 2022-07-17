@@ -26,7 +26,9 @@ export class UserService {
 			},
 			relations: {
 				videos: true,
-				subscriptions: true
+				subscriptions: {
+					toChannel: true
+				}
 			},
 			order: {
 				createdAt: 'DESC'
