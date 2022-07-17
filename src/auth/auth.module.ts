@@ -12,6 +12,7 @@ import { UserEntity } from '../user/user.entity'
 	controllers: [AuthController],
 	providers: [AuthService, JwtStrategy],
 	imports: [
+		ConfigModule,
 		JwtModule.registerAsync({
 			imports: [ConfigModule],
 			inject: [ConfigService],

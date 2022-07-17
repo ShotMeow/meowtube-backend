@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config'
 import { InjectRepository } from '@nestjs/typeorm'
 import { UserEntity } from '../../user/user.entity'
 import { Repository } from 'typeorm'
-import { ExtractJwt, Strategy } from 'passport'
+import { ExtractJwt, Strategy } from 'passport-jwt'
 import { Injectable } from '@nestjs/common'
 
 @Injectable()

@@ -9,8 +9,7 @@ import { UserEntity } from '../user/user.entity'
 import { Repository } from 'typeorm'
 import { JwtService } from '@nestjs/jwt'
 import { AuthDto } from './dto/auth.dto'
-import { compare, genSalt } from 'bcryptjs'
-import { hash } from 'typeorm/util/StringUtils'
+import { compare, genSalt, hash } from 'bcryptjs'
 
 @Injectable()
 export class AuthService {
@@ -28,7 +27,7 @@ export class AuthService {
 
 		const newUser = await this.userRepository.create({
 			email: dto.email,
-			password: hash(dto.password, salt)
+			password: await hash(dto.password, salt)
 		})
 		const user = await this.userRepository.save(newUser)
 

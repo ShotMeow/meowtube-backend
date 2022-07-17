@@ -1,8 +1,6 @@
-import { Column, Entity, ManyToOne, OneToMany } from 'typeorm'
+import { Column, Entity, ManyToOne, OneToMany, JoinColumn } from 'typeorm'
 import { UserEntity } from '../user/user.entity'
-import { JoinColumn } from 'typeorm/browser'
 import { Base } from '../utils/base'
-import { SubscriptionEntity } from '../user/subscription.entity'
 import { CommentEntity } from '../comment/comment.entity'
 
 @Entity('Video')
